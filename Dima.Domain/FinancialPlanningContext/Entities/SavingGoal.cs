@@ -1,25 +1,26 @@
 ﻿using Dima.Domain.FinancialPlanningContext.ValueObjects;
 using Dima.Domain.SharedContext.Abstractions.Date;
+using Dima.Domain.SharedContext.Entities;
 
 namespace Dima.Domain.FinancialPlanningContext.Entities;
 
 /// <summary>
 /// Representa uma meta financeira de economia
 /// </summary>
-public class SavingGoal
+public sealed class SavingGoal : Entity
 {
     #region Constructors
 
     private SavingGoal(
         Goal goal, 
-        Target target, 
+        Period period, 
         Category category, 
         bool isNotificationsEnabled, 
         Track track, 
         Guid userId)
     {
         Goal = goal;
-        Target = target;
+        Period = period;
         Category = category;
         IsNotificationsEnabled = isNotificationsEnabled;
         Track = track;
@@ -42,7 +43,7 @@ public class SavingGoal
         IDateTimeProvider provider)
     {
         var goal = Goal.Create(description, targetAmount, currentAmount);
-        var target = Target.Create(startDateUtc, endDateUtc, provider);
+        var target = Period.Create(startDateUtc, endDateUtc, provider);
         var track = Track.Create(provider);
         
         return new SavingGoal(goal, target, category, isNotificationsEnabled, track, userId);
@@ -58,9 +59,9 @@ public class SavingGoal
     public Goal Goal { get;  }
 
     /// <summary>
-    /// Define as datas da meta
+    /// Período da Meta
     /// </summary>
-    public Target Target { get;  }
+    public Period Period { get;  }
 
     /// <summary>
     /// Categoria da meta

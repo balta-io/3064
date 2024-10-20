@@ -2,21 +2,37 @@
 
 namespace Dima.Domain.FinancialPlanningContext.Entities;
 
-public class Category : Entity
+public sealed class Category : Entity
 {
-    private Category(string title, string description, SpendingLimit? spendingLimit)
+    #region Constructors
+
+    private Category(string title, Guid userId, string? description)
     {
         Title = title;
+        UserId = userId;
         Description = description;
-        SpendingLimit = spendingLimit;
     }
 
-    public static Category Create(string title, string description = "", SpendingLimit? spendingLimit = null)
+    #endregion
+
+    #region Factories
+
+    public static Category Create(string title, Guid userId, string description = "")
     {
-        return new Category(title, description, spendingLimit);
+        return new Category(title, userId, description);
     }
+
+    #endregion
+
+    #region Properties
 
     public string Title { get; }
     public string? Description { get; }
-    public SpendingLimit? SpendingLimit { get; }
+
+    /// <summary>
+    /// Obtém ou define o identificador do usuário associado a esse limite de gastos.
+    /// </summary>
+    public Guid UserId { get; }
+
+    #endregion
 }

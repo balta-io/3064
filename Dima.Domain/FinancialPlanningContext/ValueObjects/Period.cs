@@ -5,13 +5,13 @@ using Dima.Domain.SharedContext.ValueObjects;
 namespace Dima.Domain.FinancialPlanningContext.ValueObjects;
 
 /// <summary>
-/// Define quando uma meta começa e termina
+/// Define quando algo começa e termina
 /// </summary>
-public sealed record Target : ValueObject
+public sealed record Period : ValueObject
 {
     #region Constructors
 
-    private Target(DateTime startDateUtc, DateTime endDateUtc)
+    private Period(DateTime startDateUtc, DateTime endDateUtc)
     {
         StartDateUtc = startDateUtc;
         EndDateUtc = endDateUtc;
@@ -21,7 +21,7 @@ public sealed record Target : ValueObject
 
     #region Factories
 
-    public static Target Create(DateTime startDateUtc, DateTime endDateUtc, IDateTimeProvider provider)
+    public static Period Create(DateTime startDateUtc, DateTime endDateUtc, IDateTimeProvider provider)
     {
         if (startDateUtc < provider.UtcNow)
             throw new InvalidTargetStartDateException();
@@ -29,7 +29,7 @@ public sealed record Target : ValueObject
         if (endDateUtc <= startDateUtc)
             throw new InvalidTargetEndDateException();
 
-        return new Target(startDateUtc, endDateUtc);
+        return new Period(startDateUtc, endDateUtc);
     }
 
     #endregion

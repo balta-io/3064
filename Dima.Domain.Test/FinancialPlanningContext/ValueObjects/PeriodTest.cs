@@ -5,7 +5,7 @@ using Dima.Domain.Test.SharedContext.Mocks;
 
 namespace Dima.Domain.Test.FinancialPlanningContext.ValueObjects;
 
-public class TargetTest
+public class PeriodTest
 {
     #region Private Members
 
@@ -18,7 +18,7 @@ public class TargetTest
 
     #region Constructors
 
-    public TargetTest()
+    public PeriodTest()
     {
         var provider = new DateTimeProvider();
 
@@ -39,7 +39,7 @@ public class TargetTest
 
         Assert.Throws<InvalidTargetStartDateException>(() =>
         {
-            Target.Create(startDate, _endDateUtc, _dateTimeProvider);
+            Period.Create(startDate, _endDateUtc, _dateTimeProvider);
         });
     }
 
@@ -50,20 +50,20 @@ public class TargetTest
 
         Assert.Throws<InvalidTargetEndDateException>(() =>
         {
-            Target.Create(_startDateUtc, endDate, _dateTimeProvider);
+            Period.Create(_startDateUtc, endDate, _dateTimeProvider);
         });
     }
 
     [Fact]
     public void ShouldFailIfStartAndEndDatesAreEqual()
     {
-        Assert.Throws<InvalidTargetEndDateException>(() => { Target.Create(_now, _now, _dateTimeProvider); });
+        Assert.Throws<InvalidTargetEndDateException>(() => { Period.Create(_now, _now, _dateTimeProvider); });
     }
 
     [Fact]
     public void ShouldCreateTarget()
     {
-        var target = Target.Create(_startDateUtc, _endDateUtc, _dateTimeProvider);
+        var target = Period.Create(_startDateUtc, _endDateUtc, _dateTimeProvider);
         Assert.Equal(_startDateUtc, target.StartDateUtc);
         Assert.Equal(_endDateUtc, target.EndDateUtc);
     }

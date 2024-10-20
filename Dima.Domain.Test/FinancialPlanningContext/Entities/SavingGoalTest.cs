@@ -17,6 +17,7 @@ public class SavingGoalTest
 
     #region Private Members
 
+    private readonly Guid _user;
     private readonly DateTime _startDateUtc;
     private readonly DateTime _endDateUtc;
     private readonly Category _category;
@@ -31,9 +32,10 @@ public class SavingGoalTest
     {
         var provider = new DateTimeProvider();
 
+        _user = Guid.NewGuid();
         _startDateUtc = provider.UtcNow;
         _endDateUtc = provider.UtcNow.AddMonths(1);
-        _category = Category.Create("Viagens");
+        _category = Category.Create("Viagens", _user);
         _userId = Guid.NewGuid();
         _dateTimeProvider = provider;
     }
