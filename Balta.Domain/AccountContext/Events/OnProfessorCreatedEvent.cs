@@ -1,0 +1,5 @@
+using Balta.Domain.SharedContext.Events.Abstractions;
+
+namespace Balta.Domain.AccountContext.Events;
+
+public sealed record OnProfessorCreatedEvent(Guid Id, string Name, string Email) : IDomainEvent;

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balta.Domain", "Balta.Domain\Balta.Domain.csproj", "{F9BF1E83-12AF-4DD1-AB68-8277439CFC99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balta.Application", "Balta.Application\Balta.Application.csproj", "{39BBF6CD-5C4F-4EC7-8E34-1E3A5CF80F97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balta.Infrastructure", "Balta.Infrastructure\Balta.Infrastructure.csproj", "{14D0A587-6450-4A8F-9A0F-D492D8F97C75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9BF1E83-12AF-4DD1-AB68-8277439CFC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9BF1E83-12AF-4DD1-AB68-8277439CFC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9BF1E83-12AF-4DD1-AB68-8277439CFC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9BF1E83-12AF-4DD1-AB68-8277439CFC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39BBF6CD-5C4F-4EC7-8E34-1E3A5CF80F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39BBF6CD-5C4F-4EC7-8E34-1E3A5CF80F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39BBF6CD-5C4F-4EC7-8E34-1E3A5CF80F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39BBF6CD-5C4F-4EC7-8E34-1E3A5CF80F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D0A587-6450-4A8F-9A0F-D492D8F97C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D0A587-6450-4A8F-9A0F-D492D8F97C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D0A587-6450-4A8F-9A0F-D492D8F97C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D0A587-6450-4A8F-9A0F-D492D8F97C75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
